@@ -4,7 +4,7 @@ A self-contained, responsive pricing page assessment for an invented VPS product
 
 ## Open and test
 
-Open [index.html](./index.html) directly in Chrome or Firefox, or run `npm install` then `npm run dev` for a local Vite preview. I tested the layout at 360px, 768px and 1440px widths and checked the production build with `npm run build`.
+Open [index.html](./index.html) directly in Chrome or Firefox, or run `npm install` then `npm run dev` for a local Vite preview. I tested the layout at 360px, 768px and 1440px widths in Chrome and checked the production build with `npm run build`. Firefox was not available in the review environment; the implementation uses native HTML/CSS controls and no browser-specific APIs.
 
 The page works without JavaScript: monthly PKR plan prices, the complete comparison table and FAQ content are present in the HTML. JavaScript adds annual pricing, hard-coded currency conversion (1 USD = 278.50 PKR, 1 GBP = 355.00 PKR), `localStorage` persistence and live announcements.
 
