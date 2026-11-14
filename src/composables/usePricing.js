@@ -10,6 +10,8 @@ function stored(key, fallback) {
 export function usePricing() {
   const period = ref(stored('pkhosting-period', 'monthly'))
   const currency = ref(stored('pkhosting-currency', 'PKR'))
+  if (period.value !== 'monthly' && period.value !== 'annual') period.value = 'monthly'
+  if (currency.value !== 'PKR' && currency.value !== 'USD' && currency.value !== 'GBP') currency.value = 'PKR'
   const formatPrice = (pkr) => {
     const value = pkr / rates[currency.value]
     return currency.value === 'PKR'

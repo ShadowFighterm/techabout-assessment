@@ -6,7 +6,7 @@ A self-contained, responsive pricing page assessment for an invented VPS product
 
 Install dependencies with `npm install`, then run `npm run dev` for the Vue JSX preview. For an offline production copy, run `npm run build` and open `dist/index.html`; Vite is configured with a relative base so the built folder works from `file://`. The source `index.html` contains the noscript fallback, but JSX requires the Vite build to render the full application.
 
-The Vue page is split into data, composable pricing state, and JSX components in `src/main.jsx`. It adds annual pricing, hard-coded currency conversion (1 USD = 278.50 PKR, 1 GBP = 355.00 PKR), `localStorage` persistence and live announcements. CSS is organized under `src/css/`, with `main.css` as the local entry point. A small `<noscript>` fallback remains in `index.html`; the full comparison table is generated from Vue data when JavaScript is enabled.
+The Vue page is split into data, composable pricing state, and focused JSX components under `src/components/`, composed by `src/App.jsx` and mounted by `src/main.jsx`. It adds annual pricing, hard-coded currency conversion (1 USD = 278.50 PKR, 1 GBP = 355.00 PKR), `localStorage` persistence and live announcements. CSS is organized under `src/css/`, with `main.css` as the local entry point. A small `<noscript>` fallback remains in `index.html`; the full comparison table is generated from Vue data when JavaScript is enabled.
 
 ## Decisions and trade-offs
 
