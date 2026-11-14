@@ -10,3 +10,8 @@ Observed on the public PKHosting homepage on 14 November 2026. These observation
 6. **Daily backups link:** the backup bullet links to a separate policy and the page distinguishes retention periods between plans. **Consequence:** the link supports informed buying, but an important term requires leaving the pricing comparison.
 
 This assessment page borrows the useful patterns (visible billing context, popular-plan cue and explicit inclusions) while adding a dedicated comparison table for VPS specifications.
+
+## Assessment trade-offs
+
+- **State persistence:** `localStorage` remembers the billing period and currency on the same origin. If storage is blocked or unavailable, the page safely starts in monthly PKR and remains usable.
+- **Payment methods:** PKHosting lists eight methods publicly. This invented VPS footer keeps four likely first-choice options for a Pakistani buyer—bank transfer, Visa/Mastercard, JazzCash and EasyPaisa—and drops cheque, cash deposit, PayPal and international transfer to avoid implying unsupported checkout paths. A production checkout would confirm availability, fees and settlement timing before launch.
