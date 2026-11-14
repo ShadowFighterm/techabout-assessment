@@ -1,12 +1,12 @@
 # PKHosting VPS Hosting
 
-A self-contained, responsive pricing page assessment for an invented VPS product line. It uses plain HTML, CSS and JavaScript with no external requests, fonts, images, analytics or APIs.
+A self-contained, responsive pricing page assessment for an invented VPS product line. It uses Vue 3 with JSX, local CSS and no external requests, fonts, images, analytics or APIs.
 
 ## Open and test
 
-Open [index.html](./index.html) directly in Chrome or Firefox, or run `npm install` then `npm run dev` for a local Vite preview. I tested the layout at 360px, 768px and 1440px widths in Chrome and checked the production build with `npm run build`. Firefox was not available in the review environment; the implementation uses native HTML/CSS controls and no browser-specific APIs.
+Install dependencies with `npm install`, then run `npm run dev` for the Vue JSX preview. For an offline production copy, run `npm run build` and open `dist/index.html`; Vite is configured with a relative base so the built folder works from `file://`. The source `index.html` contains the noscript fallback, but JSX requires the Vite build to render the full application.
 
-The page works without JavaScript: monthly PKR plan prices, the complete comparison table and FAQ content are present in the HTML. JavaScript adds annual pricing, hard-coded currency conversion (1 USD = 278.50 PKR, 1 GBP = 355.00 PKR), `localStorage` persistence and live announcements.
+The Vue page is split into data, composable pricing state, and JSX components in `src/main.jsx`. It adds annual pricing, hard-coded currency conversion (1 USD = 278.50 PKR, 1 GBP = 355.00 PKR), `localStorage` persistence and live announcements. CSS is organized under `src/css/`, with `main.css` as the local entry point. A small `<noscript>` fallback remains in `index.html`; the full comparison table is generated from Vue data when JavaScript is enabled.
 
 ## Decisions and trade-offs
 
@@ -17,11 +17,11 @@ The page works without JavaScript: monthly PKR plan prices, the complete compari
 
 ## Accessibility and performance
 
-Semantic landmarks, labelled controls, keyboard-visible focus, native `details` FAQ disclosure, table headers, colour contrast and an `aria-live` price announcement are included. There are no third-party requests and the source is comfortably under 300 KB.
+Semantic landmarks, labelled controls, keyboard-visible focus, native `details` FAQ disclosure, table headers, colour contrast and an `aria-live` price announcement are included. There are no third-party requests and the built output is comfortably under 300 KB.
 
 ## Screenshots and audit
 
-The review screenshots are captured at 360px, 768px and 1440px widths during review. A lightweight Lighthouse-style checklist is committed in [lighthouse-report.json](./lighthouse-report.json); run Lighthouse in Chrome for a browser-generated report when desired.
+The review screenshots were captured at 360px, 768px and 1440px widths during review. A lightweight Lighthouse-style checklist is committed in [lighthouse-report.json](./lighthouse-report.json); run Lighthouse in Chrome for a browser-generated report when desired. A detailed requirement-by-requirement status is in [docs/REQUIREMENTS-CHECK.txt](./docs/REQUIREMENTS-CHECK.txt).
 
 ## Unfinished / assessment scope
 
